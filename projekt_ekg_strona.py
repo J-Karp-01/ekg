@@ -86,7 +86,7 @@ wybor_ekg = st.selectbox(
 # --- funkcja: EKG wysiłkowe
 @st.cache_data
 def load_my_data():
-    path = "C:/Users/bekis/Downloads/ekg/ekg_wysilkowe_AlisaSel.txt"
+    path = "ekg_wysilkowe_AlisaSel.txt"
 
     with open(path, 'r') as f:
         lines = f.readlines()
@@ -115,7 +115,7 @@ def load_my_data():
 # --- funkcja: EKG spoczynkowe
 @st.cache_data
 def load_rest_data():
-    path = "C:/Users/bekis/Downloads/ekg/ekg_spoczynkowe_Alisa.txt"  
+    path = "ekg_spoczynkowe_Alisa.txt"  
 
     with open(path, 'r') as f:
         lines = f.readlines()
