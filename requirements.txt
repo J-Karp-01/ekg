@@ -1,14 +1,9 @@
 pandas
 matplotlib
-numpy 
-glob
-os
-pathlib
-warnings
+numpy
 seaborn
 streamlit
 plotly
 neurokit2
 emd
 scipy
-
