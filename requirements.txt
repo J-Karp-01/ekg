@@ -1,7 +1,8 @@
 pandas
 matplotlib.pyplot
 numpy 
-glob, os
+glob
+os
 pathlib
 scipy.signal
 scipy.signal
