@@ -832,7 +832,7 @@ if wybor == "FFT":
     from scipy.signal import welch
     f, pxx = welch(ecg, fs=1000, nperseg=1024)
 
-    fig = go.Figure()
+    fig = make_subplots(rows=1, cols=1)
     fig.add_trace(go.Scatter(x=f, y=pxx, mode='lines'))
 
     fig.update_layout(
