@@ -821,37 +821,7 @@ fig_check = go.Figure()
 fig_check.add_trace(go.Scatter(y=ecg, name="ECG"))
 st.plotly_chart(fig_check)
 
-# ===== wybór =====
-wybor = st.radio("Wybierz:", ["FFT", "EMD"], horizontal=True)
-
-
-# FFT
-
-if wybor == "FFT":
-
-    from scipy.signal import welch
-    try:
-        f, pxx = welch(ecg, fs=1000, nperseg=1024)
-
-        fig = make_subplots(rows=1, cols=1)
-        fig.add_trace(go.Scatter(x=f, y=pxx, mode='lines'))
-
-        fig.update_layout(
-        plot_bgcolor='#111111',
-        paper_bgcolor='#111111',
-        font=dict(color='white'),
-        xaxis=dict(range=[0, 10]),
-        height=300
-    )
-
-        st.plotly_chart(fig, use_container_width=True)
-    except:
-        pass
-
-
 # EMD
-
-else:
     imfs = emd.sift.sift(ecg)
     n = min(6, imfs.shape[1])  # ważne: shape[1]!
 
