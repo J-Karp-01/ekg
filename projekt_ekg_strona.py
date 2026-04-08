@@ -830,12 +830,13 @@ wybor = st.radio("Wybierz:", ["FFT", "EMD"], horizontal=True)
 if wybor == "FFT":
 
     from scipy.signal import welch
-    f, pxx = welch(ecg, fs=1000, nperseg=1024)
+    try:
+        f, pxx = welch(ecg, fs=1000, nperseg=1024)
 
-    fig = make_subplots(rows=1, cols=1)
-    fig.add_trace(go.Scatter(x=f, y=pxx, mode='lines'))
+        fig = make_subplots(rows=1, cols=1)
+        fig.add_trace(go.Scatter(x=f, y=pxx, mode='lines'))
 
-    fig.update_layout(
+        fig.update_layout(
         plot_bgcolor='#111111',
         paper_bgcolor='#111111',
         font=dict(color='white'),
@@ -843,7 +844,9 @@ if wybor == "FFT":
         height=300
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
+    except:
+        pass
 
 
 # EMD
