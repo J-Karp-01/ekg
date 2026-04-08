@@ -799,7 +799,7 @@ def highlight_selected(x):
 
 # 3. Nakładamy styl tylko na WYBRANĄ kolumnę
 # Wszystkie inne kolumny zostaną domyślne (lub możesz im nadać szary kolor)
-styled_df = df_qrs.style.applymap(
+styled_df = df_qrs.style.apply(
             highlight_selected, 
             subset=[wybrana_kolumna]
 ).format(precision=3) # Zaokrąglenie dla czytelności
